@@ -9,7 +9,26 @@ namespace GambleSimulation
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to GambleSimulation!");
+            Program program = new Program();
+            Console.WriteLine("Welcome To Gambler Simulatiion!");
+            program.CheckBet();
+        }
+        public void CheckBet()
+        {
+            int gamble;
+            Random random = new Random();
+            int check = random.Next(0, 2);
+            if (check == 0)
+            {
+                gamble = STAKE + BET;
+                Console.WriteLine("Profit " + gamble);
+            }
+            else
+            {
+                gamble = STAKE - BET;
+                Console.WriteLine("Loss " + gamble);
+            }
+
         }
     }
 }
